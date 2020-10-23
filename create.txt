@@ -1,0 +1,56 @@
+  CREATE TABLE ARTICLE(
+  titre VARCHAR2(500) NOT NULL PRIMARY KEY  ,
+  resume VARCHAR2(500),
+  typearticle VARCHAR2(500)
+  );
+
+  CREATE TABLE chercheur(
+  email VARCHAR2(500) NOT NULL  PRIMARY KEY ,
+  nomchercheur   VARCHAR2(500),
+  prenomchercheur VARCHAR2(500),
+  urlchercheur VARCHAR2(500)
+  );
+
+  CREATE TABLE laboratoire(
+  nomlabo VARCHAR2(500) NOT NULL PRIMARY KEY ,
+  siglelabo VARCHAR2(500),
+  adresselabo VARCHAR2(500),
+  urllabo VARCHAR2(500)
+  );
+
+  CREATE table support(
+  nomsupport VARCHAR2(500) NOT NULL PRIMARY key ,
+  typesuppirt VARCHAR2(500)
+  );
+  CREATE TABLE annotation(
+  libelle VARCHAR2(500) NOT NULL PRIMARY KEY
+  );
+  CREATE TABLE ecrire(
+  titre VARCHAR2(500) NOT NULL  ,
+  email VARCHAR2(500) NOT NULL,
+  PRIMARY KEY (titre,email)
+  );
+  CREATE TABLE publier(
+  titre varchar(500) NOT NULL,
+  nomsupport varchar(500) NOT NULL,
+  annee_publication NUMBER(38),
+  PRIMARY KEY (titre, nomsupport )
+  );
+  CREATE TABLE travailler(
+  email varchar(500) NOT NULL,
+  nomlabo varchar(500) NOT NULL
+  PRIMARY KEY (email, nomlabo)
+  );
+
+  CREATE TABLE annoter(
+  email varchar(500) NOT NULL,
+  titre  varchar(500) NOT NULL,
+  libelle  varchar(500) NOT NULL,
+  PRIMARY KEY (email, titre,libelle)
+  );
+  CREATE TABLE noter(
+  email varchar(500) NOT NULL,
+  titre varchar(500) NOT NULL,
+  note NUMBER(38),
+  PRIMARY KEY( email, titre)
+  );
