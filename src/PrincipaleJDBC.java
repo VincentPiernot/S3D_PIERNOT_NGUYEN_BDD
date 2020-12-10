@@ -13,7 +13,7 @@ public class PrincipaleJDBC {
 	public static void main(String[] args) throws SQLException {
 
 		  DBConnection db = DBConnection.getInstance();
-		  db.setNomDB("test");
+		//  db.setNomDB("test");
 		  Connection connect =db.getConnection();
 
 		// creation de la table Serie
@@ -140,6 +140,7 @@ public class PrincipaleJDBC {
 			stmt.executeUpdate(drop);
 			System.out.println("9) Supprime table Serie");
 		}
+		
 
 	}
 
